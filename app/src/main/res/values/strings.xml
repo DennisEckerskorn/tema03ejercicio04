@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">tema03ejercicio04</string>
+    <string name="tvScore">Score:</string>
+    <string name="tvTitle">Rock, Paper, Scissor</string>
+    <string name="cdRock">Rock</string>
+    <string name="cdPaper">Paper</string>
+    <string name="cdScissor">Scissor</string>
 </resources>

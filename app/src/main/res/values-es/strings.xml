@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">tema03ejercicio04</string>
+    <string name="tvScore">Puntuación:</string>
+    <string name="tvTitle">Piedra, Papel, Tijera</string>
+    <string name="cdRock">Piedra</string>
+    <string name="cdPaper">Papel</string>
+    <string name="cdScissor">Tijera</string>
+</resources>
