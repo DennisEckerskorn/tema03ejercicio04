@@ -1,6 +1,8 @@
 package com.denniseckerskorn.tema03ejercicio04;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -82,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Método que simula las rondas jugadas.
+     * EL jugador selecciona las imagenes hasta llegar a 3 puntos para ganar o 3 perdidas para perder.
+     * Cuando se gana o pierde, se ejecuta un CountDown antes de resetear el juego.
+     *
+     * @param playerChoice     Imagen seleccionada por el jugador
+     * @param playerImageResId ID de la imagen seleccionada.
+     */
     private void playRound(RPSGame.GameSymbol playerChoice, int playerImageResId) {
         //Asignar imagen del jugador:
         ivPlayer.setImageResource(playerImageResId);
@@ -101,24 +111,47 @@ public class MainActivity extends AppCompatActivity {
         //Actualizar el score:
         tvPoints.setText(String.valueOf(rpsGame.getScore()));
 
-        if (rpsGame.getScore() == 3) {
+        //Evaluar si ha ganado
+        if (rpsGame.getScore() >= 3) {
             Toast.makeText(this, getString(R.string.finalWin), Toast.LENGTH_SHORT).show();
             //Reset Game
-            resetGame();
+            new CountDownTimer(2000, 1000) {
+                public void onTick(long millisUntilFinished) {
+
+                }
+
+                public void onFinish() {
+                    resetGame();
+                }
+            }.start();
         }
 
-        if(rpsGame.getLosses() == 3) {
+        //Evaluar si ha perdido
+        if (rpsGame.getLosses() >= 3) {
             Toast.makeText(this, getString(R.string.finalLoss), Toast.LENGTH_SHORT).show();
-            //Reset game
-            resetGame();
+            new CountDownTimer(2000, 1000) {
+                public void onTick(long millisUntilFinished) {
+
+                }
+
+                public void onFinish() {
+                    resetGame();
+                }
+            }.start();
         }
 
-        if(result == 2) {
+        //Actualizar imagen al perder
+        if (result == 2) {
             updateImageHeart(rpsGame.getLosses());
         }
 
     }
 
+    /**
+     * Método que actualiza las imagen de los corazones en funcion de los puntos perdidos.
+     *
+     * @param losses Número de perdidas del jugador
+     */
     private void updateImageHeart(int losses) {
         switch (losses) {
             case 1:
@@ -133,6 +166,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Muestra un mensaje de resultado en función del resultado de la ronda.
+     *
+     * @param result Resultado de la ronda (0: empate, 1: jugador gana, 2: jugador pierde).
+     */
     private void showResultMessage(int result) {
         switch (result) {
             case 0: //Empate
@@ -148,6 +186,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Actualiza la imagen de la selección de la CPU según su elección.
+     *
+     * @param computerChoice Elección aleatoria de la CPU.
+     */
     private void updateImageComputerChoice(RPSGame.GameSymbol computerChoice) {
         switch (computerChoice) {
             case ROCK:
@@ -161,6 +204,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Reinicia el juego, reseteando el puntaje y las imágenes de estado.
+     */
     private void resetGame() {
         rpsGame.reset();
         tvPoints.setText("0");
@@ -168,6 +214,9 @@ public class MainActivity extends AppCompatActivity {
         resetHeartImages();
     }
 
+    /**
+     * Resetea las imágenes de los corazones a su estado original.
+     */
     private void resetHeartImages() {
         ivRedHeart1.setImageResource(R.drawable.life_heart);
         ivRedHeart2.setImageResource(R.drawable.life_heart);

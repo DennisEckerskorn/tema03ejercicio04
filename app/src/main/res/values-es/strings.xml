@@ -11,4 +11,6 @@
     <string name="tvDrawMessage">Empate!</string>
     <string name="finalWin">Felicidades, Has Ganado!</string>
     <string name="finalLoss">Que pena, has perdido!</string>
+    <string name="tvPlayer">Jugador</string>
+    <string name="tvCPU">CPU</string>
 </resources>

@@ -74,12 +74,30 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         app:srcCompat="@drawable/life_heart" />
 
+    <TextView
+        android:id="@+id/tvPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvPlayer"
+        app:layout_constraintBottom_toTopOf="@+id/ivPlayer"
+        app:layout_constraintEnd_toEndOf="@+id/ivPlayer"
+        app:layout_constraintStart_toStartOf="@+id/ivPlayer" />
+
+    <TextView
+        android:id="@+id/tvCPU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvCPU"
+        app:layout_constraintBottom_toTopOf="@+id/ivCPU"
+        app:layout_constraintEnd_toEndOf="@+id/ivCPU"
+        app:layout_constraintStart_toStartOf="@+id/ivCPU" />
+
     <ImageView
         android:id="@+id/ivPlayer"
         android:layout_width="92dp"
         android:layout_height="92dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="98dp"
         app:layout_constraintEnd_toStartOf="@+id/ivCPU"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,7 +108,7 @@
         android:id="@+id/ivCPU"
         android:layout_width="92dp"
         android:layout_height="92dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivPlayer"

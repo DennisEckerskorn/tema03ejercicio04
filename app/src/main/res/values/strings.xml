@@ -10,4 +10,6 @@
     <string name="tvDrawMessage">Draw!</string>
     <string name="finalWin">Congratulations, you have Won!</string>
     <string name="finalLoss">What a shame, you have lost!</string>
+    <string name="tvPlayer">Player</string>
+    <string name="tvCPU">CPU</string>
 </resources>
