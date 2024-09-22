@@ -5,4 +5,9 @@
     <string name="cdRock">Rock</string>
     <string name="cdPaper">Paper</string>
     <string name="cdScissor">Scissor</string>
+    <string name="tvWinnerMessage">You have Won!</string>
+    <string name="tvLooserMessage">You have Lost!</string>
+    <string name="tvDrawMessage">Draw!</string>
+    <string name="finalWin">Congratulations, you have Won!</string>
+    <string name="finalLoss">What a shame, you have lost!</string>
 </resources>
