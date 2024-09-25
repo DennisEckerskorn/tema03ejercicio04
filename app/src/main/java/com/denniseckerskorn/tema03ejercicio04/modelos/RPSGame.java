@@ -22,7 +22,7 @@ public class RPSGame {
         this.rnd = new Random();
     }
 
-    /**
+    /**TODO: Cambiar Ganar, Perder, Empate y Error a enumerado...
      * Metodo para determinar el resultado.
      * Si la eleccion del jugador es igual al de la CPU = Empate
      * Piedra vence a Tijera
